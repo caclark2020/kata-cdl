@@ -33,3 +33,65 @@ To run the demo, just execute the uk.bcb.cdl.kata.shopping.Main class
 This will use a standard catalogue and priceplan for the demo, according to the Kata.
 
 
+Command Line Interface (CLI)
+============================
+
+When you run the demo, you will start a command line interface, that allows you to manage your shopping basket (order), look at the catalogue and
+priceplan, retrieve a summary of what is in your order, and also get a fully itemized receipt.
+
+Managing your order
+-------------------
+
+**add** command:
+
+	This command allows you to add 1 or more items of a specific type to your order,
+	for example: 'add A' will add 1 unit of item 'A' to your order, and 'add A 10' will add 10 units of item 'A' to your order. 
+	If you specify an amount, it must be a positive integer value greater or equal to 1.
+	The item code (SKU) must exist in the catalogue, otherwise there will be an error.
+	
+**remove** command
+
+	This command allows you to remove 1 or more items of a specific type from your order.
+	for example: 'remove A' will remove 1 unit of item 'A' from your order, and 'remove A 10' will remove 10 units of item 'A'
+	from your order. 
+	If you specify an amount, it must be a positive integer value greater or equal to 1.
+	The item code (SKU) must exist in the catalogue, otherwise there will be an error.
+	If the amount to remove is greater than the amount you have in your order, then the item will be cleared from your order -
+	so for example if you have 8 items of 'B', and you use 'remove B 20', you will end up with 0 Bs in your order.
+	
+**clear** command
+
+	This command will, if an SKU is specified, clear the total for that specific item in your order, and if an SKU is
+	not specified, it will clear the entire order.
+	
+**summary** command
+
+	This command will provide you a summary of the total amount of items in your order, and the total of each SKU in your order.
+	
+**receipt** command
+
+	This command will display a full receipt, prices in pounds, including the amount you are saving from offers.
+	
+Catalogue / Priceplan
+---------------------
+
+**catalogue** command
+
+	This will list all the SKUs (Stock Keeping Units) available in the catalogue. For the purposes of the demo, these are
+	basically 'A', 'B', 'C' and 'D'.
+	
+**prices** command
+
+	This will display the base prices of all the SKUs in the catalogue (cost of the item outside any offers)
+	
+**offers** command
+
+	This will display the offers available from the priceplan (reduced price multibuy offers)
+	
+Session
+-------
+
+**bye** / **exit** / **quit** commands
+
+	These commands will end your session in the CLI (Command Line Interpreter), and close the program.
+	
